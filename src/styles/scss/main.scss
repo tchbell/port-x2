@@ -1,0 +1,89 @@
+/*Header*/
+.hero-text-box{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/keyboard.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    position: relative;
+}
+
+.main-text{
+    color:white;
+    text-align: center;
+    display:flex;
+    min-height:80vh;
+    align-items:center;
+}
+
+.main-header{
+    font-size:50px;
+}
+
+.resume-header .navbar-brand,
+.resume-header li a{
+    color:black;
+    border:1px solid black;
+}
+
+/*Main Nav*/
+nav li a:link,
+nav li a:visited{
+    color:#FFF;
+}
+
+.navbar-brand{
+    color:#fff;
+}
+
+/*Skills*/
+.skills-section{
+    height: 80vh;
+    padding-top: 10vh;
+}
+
+.skills-header{
+    display:block;
+}
+
+.skills-section ul{
+    list-style: none;
+}
+
+/*Portfolio section*/
+
+.portfolio-section{
+    background-color:#efefef;
+}
+
+.portfolio-section h2{
+    font-size:54px;
+}
+
+.port-pix img{
+    max-width:100%;
+    height:auto;
+}
+
+
+
+/*-- transformations --*/
+
+
+.pic-left{
+    transform: scale(1.5);
+    transition: transform 1.3s;
+}
+
+
+.pic-left-visibile{
+    transform: scale(1);
+}
+
+/*--contact--*/
+.contact-section ul{
+    list-type:none;
+}
+.contact-section li{
+    display:inline;
+}
