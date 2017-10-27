@@ -1,0 +1,79 @@
+/*Header*/
+.hero-text-box {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../images/keyboard.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/keyboard.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative; }
+
+.main-text {
+  color: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 80vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.main-header {
+  font-size: 50px; }
+
+.resume-header .navbar-brand,
+.resume-header li a {
+  color: black;
+  border: 1px solid black; }
+
+/*Main Nav*/
+nav li a:link,
+nav li a:visited {
+  color: #FFF; }
+
+.navbar-brand {
+  color: #fff; }
+
+/*Skills*/
+.skills-section {
+  height: 80vh;
+  padding-top: 10vh; }
+
+.skills-header {
+  display: block; }
+
+.skills-section ul {
+  list-style: none; }
+
+/*Portfolio section*/
+.portfolio-section {
+  background-color: #efefef; }
+
+.portfolio-section h2 {
+  font-size: 54px; }
+
+.port-pix img {
+  max-width: 100%;
+  height: auto; }
+
+.pic-left {
+  -webkit-transform: translateX(-120%) scale(1.5);
+          transform: translateX(-120%) scale(1.5);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 1.3s;
+  transition: all 1.3s; }
+
+.pic-left-visibile {
+  -webkit-transform: scale(1) translateX(0%);
+          transform: scale(1) translateX(0%);
+  opacity: 1;
+  visibility: visible;
+  border: 5px solid black; }
+
+.contact-section ul {
+  list-type: none; }
+
+.contact-section li {
+  display: inline; }

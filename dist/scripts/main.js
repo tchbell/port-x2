@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".port-pix").waypoint(function(i){$(".pic-left").addClass("pic-left-visible")},{offset:"50%"})});
