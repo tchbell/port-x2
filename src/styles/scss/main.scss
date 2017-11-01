@@ -1,11 +1,26 @@
+/*fixed header anchor fix*/
+.anchor {
+    content:"";
+    display:block;
+    height:50px; /* fixed header height*/
+    margin:-50px 0 0; /* negative fixed header height */
+}
+
+/*fonts*/
+nav,
+.skills-section,
+.portfolio-section,
+.contact-section{
+    font-family: 'Nunito', sans-serif;
+}
+
 /*Header*/
 .hero-text-box{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/keyboard.jpeg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/keyboardBW.jpeg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     height: 100vh;
-    position: relative;
 }
 
 .main-text{
@@ -18,28 +33,57 @@
 
 .main-header{
     font-size:50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
 }
 
-.resume-header .navbar-brand,
-.resume-header li a{
-    color:black;
-    border:1px solid black;
-}
 
 /*Main Nav*/
+
+.logo a:link,
+.logo a:visited,
+.logo a:hover,
+.logo a:active{
+    color:#fff;
+    text-decoration: none;
+    font-weight:400;
+    font-size:1.5em;
+}
+
+.logo a:hover{
+    font-weight:700;
+    text-shadow: 2px 2px 2px #777575;
+}
+
+.icon-bar{
+    background-color:white;
+}
+
 nav li a:link,
 nav li a:visited{
     color:#FFF;
+}
+
+nav li a:hover,
+nav li a:active{
+    color:#333;
 }
 
 .navbar-brand{
     color:#fff;
 }
 
+.sticky{
+    background-color:#333;
+}
+
+
+.navbar-collapse li a{
+        text-align:right;
+}
+
 /*Skills*/
 .skills-section{
-    height: 80vh;
-    padding-top: 10vh;
 }
 
 .skills-header{
@@ -50,14 +94,88 @@ nav li a:visited{
     list-style: none;
 }
 
+.jquery-icon,
+.gulp-icon{
+    height:48px;
+    width:48px;
+}
+.chrome-icon{
+    height:30px;
+    width:30px;
+}
+
+
+.ion-social-html5,
+.ion-social-css3,
+.ion-social-sass,
+.ion-social-javascript,
+.ion-social-angular,
+.skills-tools .ion-social-github,
+.ion-social-chrome{
+    font-size:2em;
+    margin-right:4px;
+    transition: color 0.2s;
+}
+
+li:hover .ion-social-html5{
+    color:#E65027;
+}
+
+li:hover .ion-social-css3{
+    color:#1572B6;
+}
+
+li:hover .ion-social-javascript{
+    color:#E5A228;
+}
+
+li:hover .ion-social-sass{
+    color:#CD669A;
+}
+
+li:hover .ion-social-angular{
+    color:#DD1B16;
+}
+
+
+.bootstrap-icon{
+    padding:2px 8px;
+    margin-right:4px;
+    font-weight:bold;
+    font-size:1.6em;
+    border-radius:10px;
+    background-color:#333;
+    color:#fff;
+}
+
+li:hover .bootstrap-icon{
+    background-color:#563D7C;
+    color:#fff;
+}
+
+.github{
+    transition: all 0.2s;
+}
+
 /*Portfolio section*/
 
 .portfolio-section{
     background-color:#efefef;
 }
 
-.portfolio-section h2{
+.skills-section h2,
+.portfolio-section h2,
+.contact-section h2{
+    font-family:'Roboto', sans-serif;
+    font-weight:700;
+}
+
+h2{
     font-size:54px;
+}
+
+h3{
+    font-family:'Roboto', sans-serif;
 }
 
 .port-pix img{
@@ -65,25 +183,105 @@ nav li a:visited{
     height:auto;
 }
 
+.port-copy-right{
+    text-align:right;
+}
+
+.port-copy-left{
+    text-align:left;
+}
+
 
 
 /*-- transformations --*/
 
 
-.pic-left{
-    transform: scale(1.5);
-    transition: transform 1.3s;
+.pic-left-1{
+    transform: scale(1) translateX(0);
+    opacity:1;
+    visibility: visible;
+    transition: all 1.0s;
 }
 
 
-.pic-left-visibile{
-    transform: scale(1);
+.pic-left-hidden{
+    transform: scale(1.5) translateX(-300px);
+    opacity:0;
+    visibility: hidden;
+}
+
+.pic-right-1{
+    transform:scale(1);
+    visibility:visible;
+    opacity:1;
+    transition: all 1.0s;
+}
+
+.pic-right-1-hidden{
+    opacity:0;
+    visibility:hidden;
+    transform:scale(0);
+}
+
+.pic-left-2{
+    transform:translateX(0);
+    visibility:visible;
+    opacity:1;
+    transition: all 1.0s;
+}
+
+.pic-left-2-hidden{
+    opacity:0;
+    visibility:hidden;
+    transform:translateX(-200px);
+}
+
+.pic-right-2{
+    margin-bottom:40px;
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    transition: all 1s;
+}
+
+.pic-right-2-hidden{
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(300px);
 }
 
 /*--contact--*/
 .contact-section ul{
-    list-type:none;
+    list-style: none;
 }
 .contact-section li{
     display:inline;
 }
+
+.social-icons{
+    margin-top:20px;
+    font-size:48px;
+}
+
+.social-icons a:link,
+.social-icons a:visited{
+    color:#333;
+}
+
+.ion-social-linkedin,
+.ion-social-github{
+    transition:all 0.2s;
+}
+
+
+.ion-social-linkedin:hover{
+    color:#007bb6;
+}
+
+/*---resume--*/
+
+body.resume{
+    background-color:#333;
+}
+
+/*--trying stuff--*/

@@ -5,12 +5,14 @@
   <meta charset="utf-8">
 
   <title>Ted Bell</title>
-  <meta name="description" content="Ted Bell Front-end Web Devloper">
+  <meta name="description" content="Ted Bell Front-end Web Developer">
   <meta name="author" content="Ted Bell">
 
-  <link rel="stylesheet" type="text/css" href="../styles/scss/main.scss">
+    <link rel="stylesheet" type="text/css" href="../styles/scss/main.scss">
 <!-- <link rel="stylesheet" type="text/css" href="../styles/main.css"> -->
-  <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../styles/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700|Roboto:400,700" rel="stylesheet">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -23,8 +25,14 @@
             <div class="container">
                 <div class="row">
                     <header>
-                        <span class="navbar-brand">T</span>
-                        <ul class="nav navbar-nav pull-right">
+                        <span class="navbar-brand logo"><a href="#top">TB</a></span>
+                        <button type="button" class="navbar-toggle page-nav__button" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="sr-only">Toggle Nav</span>
+                        </button>
+                        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
                             <li><a href="#skills">Skills</a></li>
                             <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
@@ -34,53 +42,53 @@
                 </div><!--row-->
             </div><!--container-->
         </nav>
+        
+        <span id="top"></span>
         <div class="row main-text">
             <div class="col-xs-12">
-                <h1 class="main-header">Hi, I'm Ted a Front-End Developer.</h1>
+                <h1 class="main-header">Hi, I'm Ted.<br> Front-End Developer.</h1>
             </div>
         </div><!--row-->
     </div>
-    <div class="container skills-section" id="skills">
+    <span class="anchor" id="skills"></span>
+    <div class="container skills-section">
+        <h2 class="">Skills</h2>  
         <div class="row">
-            <div class="col-md-3 col-md-offset-3">
-                <h2 class="">Skills</h2>
-            </div>    
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-md-offset-3">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3">
                 <ul class="skills-languages">
                     <li><h3>Languages</h3></li>
-                    <li>HTML</li>
-                    <li>CSS</li>
+                    <li class="testitem"><i class="ion-social-html5"></i>HTML</li>
+                    <li><i class="ion-social-css3"></i>CSS</li>
                         <ul>
-                            <li>Sass</li>
+                            <li><i class="ion-social-sass"></i>Sass</li>
                         </ul>
-                    <li>JavaScript</li>
+                    <li><i class="ion-social-javascript"></i>JavaScript</li>
                         <ul>
-                            <li>jQuery</li>
-                            <li>AngularJs</li>
+                            <li class="jquery-skill"><img class="jquery-icon" src="../images/jquery.png">jQuery</li>
+                            <li><i class="ion-social-angular"></i>AngularJs</li>
                         </ul>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-3">
                 <ul class="skills-tools">
                     <li><h3>Tools</h3></li>
-                    <li>Bootstrap</li>
-                    <li>Gulp</li>
-                    <li>Git & Github</li>
-                    <li>Chrome DevTools</li>
+                    <li><span class="bootstrap-icon">B</span>Bootstrap</li>
+                    <li class="gulp-skill"><img class="gulp-icon" src="../images/gulp-icon.png">Gulp</li>
+                    <li class="github-skill"><i class="github ion-social-github"></i>Git &amp; Github</li>
+                    <li class="chrome-skill"><img class="chrome-icon" src="../images/chrome-black.png">Chrome DevTools</li>
                 </ul>
             </div>
         </div><!--row-->
     </div><!--skills section-->
-    <div class="portfolio-section" id="portfolio">
+    <span class="anchor" id="portfolio"></span>
+    <div class="portfolio-section">
         <div class="container">
             <h2>Portfolio</h2>
             <div class="row">
-                <div class="col-md-7 port-pix">
-                    <img class="pic-left" src="../images/Bloc-jams.jpg">
+                <div class="col-md-6 col-sm-12 port-pix">                    
+                        <a href="https://bloc-jams-tchb.netlify.com/"><img class="pic-left-1 pic-left-hidden" src="../images/Bloc-jams.jpg"></a>
                 </div>
-                <div class="col-md-5 port-copy">
+                <div class="col-md-6 hidden-sm hidden-xs port-copy-left">
                     <h3>Track Jams</h3>
                     <p>
                         Track Jams is a streaming music player that uses AngularJs and Buzz audio library. It is a responsive website as well.
@@ -88,21 +96,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5 port-copy">
-                    <h3>Omnifood</h3>
-                    <p>
+                <div class="col-md-6 hidden-sm hidden-xs port-copy-right">
+                    <h3 class="pull-right">Omnifood</h3>
+                    <p class="pull-right">
                         Omnifood is a fictional food delivery service. Omnifood is responsive and uses CSS3 for some helpful animations. I used grid.css, waypoints.css, animate.css, and jquery.
                     </p>
                 </div>
-                <div class="col-md-7 port-pix">
-                    <img src="../images/omnifood.jpg">
+                <div class="col-md-6 col-sm-12 port-pix">
+                    <a href="https://omnifood.netlify.com/"><img class="pic-right-1 pic-right-1-hidden" src="../images/omnifood.jpg"></a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-7 port-pix">
-                    <img class="pic-left" src="../images/Kill-River-lg.jpg">
+                <div class="col-md-6 col-sm-12 port-pix">
+                    <a href="https://cjr4.netlify.com/"><img class="pic-left-2 pic-left-2-hidden" src="../images/Kill-River-lg.jpg"></a>
                 </div>
-                <div class="col-md-5 port-copy">
+                <div class="col-md-6 hidden-sm hidden-xs port-copy-left">
                     <h3>CJR Books</h3>
                     <p>
                         CJR Books uses AngularJS and Bootstrap to showcase an author's books
@@ -110,14 +118,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-5 port-copy">
-                    <h3>Mark-it-off</h3>
-                    <p>
+                <div class="col-md-6 hidden-sm hidden-xs port-copy-right">
+                    <h3 class="pull-right">Mark-it-off</h3>
+                    <p class="pull-right">
                         Mark-it-off is a to-do list that uses Firebase API and AngularJS to create tasks with an expiration date. The styling of the website is using Google fonts, Font Awesome, and custom CSS.
                     </p>
                 </div>
-                <div class="col-md-7 port-pix">
-                    <img src="../images/blocioff.jpg">
+                <div class="col-md-6 col-sm-12 port-pix">
+                    <a href="https://blocitoff-tchbell.herokuapp.com/"><img class="pic-right-2 pic-right-2-hidden" src="../images/blocioff.jpg"></a>
                 </div>
             </div>
         </div><!--Portfolio section-->
@@ -125,18 +133,22 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <section class="contact-section text-center" id="contact">
+                <span class="anchor" id="contact"></span>
+                <section class="contact-section">
                     <h2 class="contact-title">Contact</h2>
-                    <ul class="footer-list">
-                        <li class="footer-item"><a href="https://www.linkedin.com/in/ted-bell-84285767/" target="_blank"><img src="../images/linked_in%20_logo.png"></a></li>
-                        <li class="footer-item"><a href="https://github.com/tchbell" target="_blank"><img src="../images/github_logo.png" ></a></li>
-                        <li class="footer-item"></li>
-                    </ul>
-                    <div class="contact__email">
+                    <div class="row text-center social-icons">
+                        <a class="github-contact" href="https://github.com/tchbell"><i class="github-contact-icon ion-social-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ted-bell-84285767/"><i class="ion-social-linkedin"></i></a>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="contact__email text-center">
                         <span class='glyphicon glyphicon-envelope mail-icon'></span>Email: Tchbell@gmail.com
                     </div>
 
-                    <div class="footer-tagline">
+                    <div class="footer-tagline text-center">
                         Created by Ted Bell <span class="glyphicon glyphicon-copyright-mark"></span> 2017
                     </div>
                 </section>
@@ -144,21 +156,8 @@
         </div>
     </div>
     
-    
-        
-        
-        
-        
-    
-    
-    
-    
-    
-    
-    
-    
+
     <script src="../scripts/jquery-3.2.1.min.js"></script>
-    <script src="../scripts/jquery.waypoints.min.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/main.js"></script>
 </body>

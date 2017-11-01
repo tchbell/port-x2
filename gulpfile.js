@@ -58,7 +58,7 @@ gulp.task('js', function(){
         .pipe(newer(out))
         .pipe(uglify())
         .pipe(gulp.dest(out))
-        .pipe(browserSync.reload({stream:true}));
+//        .pipe(browserSync.reload({stream:true}));
 //        .pipe(browserSync.stream());
     
 });
