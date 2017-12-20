@@ -6,6 +6,7 @@ var
     imagemin = require('gulp-imagemin'),
     htmlclean = require('gulp-htmlclean'),
     uglify = require('gulp-uglify'),
+    pump = require('pump'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     assets = require('postcss-assets'),
@@ -13,7 +14,7 @@ var
     mqpacker = require('css-mqpacker'),
     cssnano = require('cssnano'),
     browserSync = require('browser-sync').create(),
-    
+
 
   // development mode?
   devBuild = (process.env.NODE_ENV !== 'production'),
@@ -39,28 +40,25 @@ gulp.task('html', ['images'], function(){
         out = folder.dist + 'html/',
         page = gulp.src(folder.src + 'html/**/*')
             .pipe(newer(out));
-    
+
     //minify production code
     if(!devBuild){
         page = page.pipe(htmlclean());
     }
-    
-    return page.pipe(gulp.dest(out))
-        .pipe(browserSync.reload({stream:true}));
-//        .pipe(browserSync.stream());
+
+    return page.pipe(gulp.dest(out));
 });
 
 // JS processing
 
-gulp.task('js', function(){
-    var out = folder.dist + 'scripts/';
-    return gulp.src(folder.src + 'scripts/**/*')
-        .pipe(newer(out))
-        .pipe(uglify())
-        .pipe(gulp.dest(out))
-//        .pipe(browserSync.reload({stream:true}));
-//        .pipe(browserSync.stream());
-    
+gulp.task('js', function (cb) {
+  pump([
+        gulp.src('src/scripts/*.js'),
+        uglify(),
+        gulp.dest('dist/scripts')
+    ],
+    cb
+  );
 });
 
 //CSS processing
@@ -70,11 +68,11 @@ gulp.task('css', ['images'], function(){
         autoprefixer({ browsers: ['last 2 versions', '>2%'] }),
         mqpacker
         ];
-    
+
     if(!devBuild) {
         postCssOpts.push(cssnano);
     }
-    
+
     return gulp.src(folder.src + 'styles/scss/main.scss')
         .pipe(sass({
           outputStyle: 'nested',
@@ -83,13 +81,9 @@ gulp.task('css', ['images'], function(){
           errLogToConsole: true
         }))
         .pipe(postcss(postCssOpts))
-        .pipe(gulp.dest(folder.dist + 'styles/'))
-        .pipe(browserSync.reload({stream:true}));
-//        .pipe(browserSync.stream());
-        
-});
+        .pipe(gulp.dest(folder.dist + 'styles/'));
 
-gulp.task('run', ['html', 'css', 'js']);
+});
 
 // watch for changes
 gulp.task('watch', function() {
@@ -108,14 +102,13 @@ gulp.task('watch', function() {
 
 });
 
-gulp.task('default', ['browserSync','run', 'watch'])
+gulp.task('run', ['html', 'css','js']);
 
-
-gulp.task('browserSync', function(){
-    browserSync.init({
-        server:{
-            baseDir:'dist',
-            directory: true
-        }
-    })
+gulp.task('watch', function(){
+  gulp.watch(folder.src + 'images/**/*', ['images']);
+  gulp.watch(folder.src + 'html**/*', ['html']);
+  gulp.watch(folder.src+ 'js/**/*', ['js']);
+  gulp.watch(folder.src + 'styles/scss/**/*', ['css']);
 });
+
+gulp.task('default', ['run', 'watch']);
